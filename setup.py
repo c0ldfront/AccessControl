@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='AccessControl',
-    version='1.0.0',
+    version='1.0.2',
     packages=['AccessController'],
     url='https://github.com/c0ldfront/AccessControl',
     license='',

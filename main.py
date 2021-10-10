@@ -18,7 +18,7 @@ def StationeersExample():
 
 def ArkExample():
     file_path = 'C:\\Users\\coldf\\PycharmProjects\\pythonProject\\examples\\'
-    file_name = 'ark_example.txt'
+    file_name = ' '
     try:
         with ArkLoader(file_path, file_name) as ark_data:
             ark_data.add('newUser')
@@ -36,8 +36,9 @@ def EcoExample():
     file_name = 'Users_example.eco'
     try:
         with EcoLoader(file_path, file_name) as eco_data:
-            eco_data.add('newUser')
-            eco_data.add('removeMe')
+            eco_data.add(['newUser', 'newUser2', 'newUser3', 'newUser4', 'newUser5'])
+            # eco_data.add('newUser')
+            # eco_data.add('removeMe')
             # eco_data.remove('removeMe')
             # print(eco_data.find_one('removeMe'))
             # print(eco_data.find_all())
@@ -52,7 +53,9 @@ def SpaceEngineersExample():
     try:
         with SELoader(file_path, file_name) as se_data:
             se_data.add('newUser')
-            se_data.add('removeMe')
+            # se_data.add('removeMe')
+            # se_data.clear()
+            # se_data.add(['newUser', 'newUser2', 'newUser3'])
             # se_data.remove('removeMe')
             # print(se_data.find_one('removeMe'))
             # print(se_data.find_all())
@@ -77,8 +80,8 @@ def ValheimExample():
 
 
 if __name__ == '__main__':
-    StationeersExample()
-    ArkExample()
-    EcoExample()
+    # StationeersExample()
+    # ArkExample()
+    # EcoExample()
     SpaceEngineersExample()
-    ValheimExample()
+    # ValheimExample()

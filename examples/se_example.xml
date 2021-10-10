@@ -14,9 +14,7 @@
     <ChatColor>Red</ChatColor>
     <EnableWhitelist>true</EnableWhitelist>
     <Whitelist>
-        <unsignedLong>76561197960869064</unsignedLong>
         <unsignedLong>newUser</unsignedLong>
-        <unsignedLong>removeMe</unsignedLong>
     </Whitelist>
     <WindowWidth>980</WindowWidth>
     <WindowHeight>588</WindowHeight>

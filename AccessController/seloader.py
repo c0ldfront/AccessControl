@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Union
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element
 
@@ -11,12 +11,24 @@ class SELoader(XMLLoader):
         super().__enter__()
         self.root = self.data.getroot()
         self.whitelist = self.root.find("Whitelist")
+        # <guid>17f44521-b77a-4e85-810f-ee73311cf75d</guid>
         self.plugins = self.root.find("Plugins")
         return self
 
-    def add(self, element: str):
+    # def add(self, element: Union[str, list]) -> bool:
+    #     if not self.exists(element):
+    #         self.whitelist.append(self.create_new_element('unsignedLong', element))
+    #         return True
+    #     return False
+
+    def add(self, element: Union[str, list]) -> bool:
         if not self.exists(element):
-            self.whitelist.append(self.create_new_element('unsignedLong', element))
+            if type(element) is str:
+                self.whitelist.append(self.create_new_element('unsignedLong', element))
+            else:
+                for i in element:
+                    if not self.exists(i):
+                        self.whitelist.append(self.create_new_element('unsignedLong', i))
             return True
         return False
 
